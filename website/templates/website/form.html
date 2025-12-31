@@ -1,0 +1,15 @@
+{% extends 'website/_layouts/base.html' %}
+
+{% block content %}
+<h2>Cadastro / Edição de Funcionário</h2>
+<div class="card card-body">
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="{% url 'website:lista_funcionarios' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
